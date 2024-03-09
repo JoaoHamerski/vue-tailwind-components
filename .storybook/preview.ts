@@ -1,3 +1,4 @@
+import '@/assets/main.css'
 import type { Preview } from '@storybook/vue3'
 
 const preview: Preview = {
