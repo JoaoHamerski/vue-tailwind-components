@@ -1,6 +1,7 @@
 import '@/assets/main.css'
 import type { Preview } from '@storybook/vue3'
-
+import withThemeDecorator from './withTheme.decorator'
+import withThemeGlobalType from './withTheme.globalType'
 const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
@@ -10,6 +11,10 @@ const preview: Preview = {
         date: /Date$/i
       }
     }
+  },
+  decorators: [withThemeDecorator],
+  globalTypes: {
+    ...withThemeGlobalType
   }
 }
 
