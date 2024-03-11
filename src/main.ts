@@ -1,5 +1,12 @@
 import './assets/main.css'
+
 import { createApp } from 'vue'
 import App from './App.vue'
+import Bootstrap from './bootstrap'
 
-createApp(App).mount('#app')
+const bootstrap = new Bootstrap(createApp(App))
+
+// prettier-ignore
+bootstrap
+    .fontAwesome()
+    .mount('#app')
