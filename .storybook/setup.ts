@@ -6,5 +6,8 @@ import '@/libs/fontawesome'
 setup((app) => {
   const bootstrap = new Bootstrap(app)
 
-  bootstrap.fontAwesome()
+  // prettier-ignore
+  bootstrap
+    .globalComponents()
+    .fontAwesome()
 })

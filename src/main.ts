@@ -9,4 +9,5 @@ const bootstrap = new Bootstrap(createApp(App))
 // prettier-ignore
 bootstrap
     .fontAwesome()
+    .globalComponents()
     .mount('#app')
