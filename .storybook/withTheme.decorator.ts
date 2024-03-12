@@ -2,6 +2,7 @@ import { Decorator } from '@storybook/vue3'
 import { ref } from 'vue'
 import { DEFAULT_THEME } from './withTheme.globalType'
 import ThemeProvider from './ThemeProvider.vue'
+
 const theme = ref(DEFAULT_THEME)
 
 const withThemeDecorator: Decorator = (Story, context) => {
