@@ -1,6 +1,11 @@
 # vue-tailwind-components
 
-This template should help get you started developing with Vue 3 in Vite.
+## Storybook
+Start storybook with
+
+```
+npm run storybook
+```
 
 ## Recommended IDE Setup
 
