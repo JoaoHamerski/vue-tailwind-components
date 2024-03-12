@@ -1,4 +1,4 @@
-import AppIcon from '@/components/AppIcon.vue'
+import AppIcon from '@/components/icon/AppIcon.vue'
 import type { Meta, StoryObj } from '@storybook/vue3'
 
 const meta: Meta<typeof AppIcon> = {
