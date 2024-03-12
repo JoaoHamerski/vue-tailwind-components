@@ -1,15 +1,18 @@
+export const DEFAULT_THEME = 'light'
+
 export default {
   theme: {
-    name: 'Toggle theme',
-    description: 'Change the theme',
-    defaultValue: 'light',
+    name: 'Theme',
+    description: 'Change the current theme',
+    defaultValue: DEFAULT_THEME,
     toolbar: {
+      icon: 'mirror',
       items: [
-        { value: 'dark', title: 'Dark', icon: 'circle' },
-        { value: 'light', title: 'Light', icon: 'circlehollow' }
+        { value: 'light', title: 'Light' },
+        { value: 'dark', title: 'Dark' },
+        { value: 'side-by-side', title: 'Side by side' }
       ],
-      showName: true,
-      dynamicTitle: false
+      dynamicTitle: true
     }
   }
 }

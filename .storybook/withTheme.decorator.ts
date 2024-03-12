@@ -1,11 +1,29 @@
-export default function (story, context) {
-  const storybookIframe = document.querySelector('html')
-  const theme = context.globals.theme
+import { Decorator } from '@storybook/vue3'
+import { ref } from 'vue'
+import { DEFAULT_THEME } from './withTheme.globalType'
+import ThemeProvider from './ThemeProvider.vue'
+const theme = ref(DEFAULT_THEME)
 
-  storybookIframe.setAttribute('data-theme', theme)
+const withThemeDecorator: Decorator = (Story, context) => {
+  const storybookHtml = document.querySelector('html')
+
+  theme.value = context.globals.theme
+
+  if (theme.value !== 'side-by-side') {
+    storybookHtml.setAttribute('data-theme', theme.value)
+  } else {
+    storybookHtml.removeAttribute('data-theme')
+  }
 
   return {
-    components: { story },
-    template: `<story />`
+    components: { Story, ThemeProvider },
+    setup: () => ({ theme }),
+    template: `
+        <ThemeProvider :theme="theme">
+            <story />
+        </ThemeProvider>
+      `
   }
 }
+
+export default withThemeDecorator
