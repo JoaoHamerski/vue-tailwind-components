@@ -2,6 +2,7 @@ import { Preview } from '@storybook/vue3'
 import withThemeDecorator from './withTheme.decorator'
 import withThemeGlobalType from './withTheme.globalType'
 import './setup'
+import '@storybook/addon-console'
 
 const preview: Preview = {
   parameters: {
