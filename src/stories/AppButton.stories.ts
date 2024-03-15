@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import AppButton from '@/components/button/AppButton.vue'
+import { SIZES_CLASS } from '@/components/button/constants'
 
 const meta: Meta<typeof AppButton> = {
   component: AppButton,
@@ -12,7 +13,7 @@ const meta: Meta<typeof AppButton> = {
     },
     size: {
       control: 'radio',
-      options: ['xs', 'sm', 'md', 'lg']
+      options: Object.keys(SIZES_CLASS)
     },
     icon: {
       control: 'object'
