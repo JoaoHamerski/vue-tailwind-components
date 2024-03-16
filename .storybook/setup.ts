@@ -3,8 +3,8 @@ import Bootstrap from '../src/bootstrap'
 import '@/assets/main.css'
 import '@/libs/fontawesome'
 import type { App } from 'vue'
-import CentralizedComponent from './helpers/CentralizedComponent.vue'
-import ThemeProvider from './helpers/ThemeProvider.vue'
+import SBCentralizedComponent from './helpers/SBCentralizedComponent.vue'
+import SBThemeProvider from './helpers/SBThemeProvider.vue'
 
 setup((app) => {
   const bootstrap = new Bootstrap(app)
@@ -18,6 +18,6 @@ setup((app) => {
 })
 
 const registerGlobalHelpers = (app: App) => {
-  app.component('CentralizedComponent', CentralizedComponent)
-  app.component('ThemeProvider', ThemeProvider)
+  app.component('SBCentralizedComponent', SBCentralizedComponent)
+  app.component('SBThemeProvider', SBThemeProvider)
 }

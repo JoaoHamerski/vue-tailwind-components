@@ -28,10 +28,10 @@ const meta: Meta<typeof AppDropdown> = {
       return { args }
     },
     template: `
-        <CentralizedComponent>
+        <SBCentralizedComponent>
             <AppDropdown v-bind="args" />
 
-        </CentralizedComponent>
+        </SBCentralizedComponent>
     `
   })
 }
@@ -59,7 +59,7 @@ export const CustomTrigger: Story = {
       return { args }
     },
     template: `
-            <CentralizedComponent>
+            <SBCentralizedComponent>
                 <div class="flex gap-4 items-center">
                     <AppDropdown v-bind="args">
                         <template #trigger>
@@ -67,7 +67,7 @@ export const CustomTrigger: Story = {
                         </template>
                     </AppDropdown>
                 </div>
-            </CentralizedComponent>
+            </SBCentralizedComponent>
         `
   })
 }
@@ -79,7 +79,7 @@ export const TriggerOpenSlotProp: Story = {
       return { args }
     },
     template: `
-            <CentralizedComponent>
+            <SBCentralizedComponent>
                 <div class="flex gap-4 items-center">
                     <AppDropdown v-bind="args">
                         <template #trigger="{ open }">
@@ -87,7 +87,7 @@ export const TriggerOpenSlotProp: Story = {
                         </template>
                     </AppDropdown>
                 </div>
-            </CentralizedComponent>
+            </SBCentralizedComponent>
         `
   })
 }
