@@ -8,7 +8,7 @@ export interface AppButtonProps {
   loading?: boolean
   disabled?: boolean
   rounded?: boolean
-  size: keyof typeof SIZES_CLASS
+  size?: keyof typeof SIZES_CLASS
   circle?: boolean
 }
 
