@@ -1,7 +1,7 @@
 import { Decorator } from '@storybook/vue3'
 import { ref } from 'vue'
 import { DEFAULT_THEME } from './withTheme.globalType'
-import ThemeProvider from './helpers/ThemeProvider.vue'
+import SBThemeProvider from './helpers/SBThemeProvider.vue'
 
 const theme = ref(DEFAULT_THEME)
 
@@ -17,12 +17,12 @@ const withThemeDecorator: Decorator = (Story, context) => {
   }
 
   return {
-    components: { Story, ThemeProvider },
+    components: { Story, SBThemeProvider },
     setup: () => ({ theme }),
     template: `
-        <ThemeProvider :theme="theme">
+        <SBThemeProvider :theme="theme">
             <story />
-        </ThemeProvider>
+        </SBThemeProvider>
       `
   }
 }
