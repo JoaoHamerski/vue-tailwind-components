@@ -5,7 +5,7 @@ defineProps<ButtonLabelProps>()
 </script>
 
 <template>
-  <AppIcon v-if="icon" :icon="icon" fixed-width :size="size" />
+  <FWIcon v-if="icon" :icon="icon" fixed-width />
   <span v-if="label">{{ label }}</span>
-  <AppIcon v-if="iconRight" :icon="iconRight" fixed-width :size="size" />
+  <FWIcon v-if="iconRight" :icon="iconRight" fixed-width />
 </template>
