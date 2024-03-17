@@ -22,7 +22,10 @@ const transitions = computed(() => ({
 <template>
   <Transition v-bind="transitions">
     <MenuItems
-      class="dropdown-content absolute z-[1] menu p-2 shadow bg-base-100 rounded-box min-w-52"
+      class="absolute menu z-[1] p-2 shadow bg-base-100 dark:bg-base-200 rounded-box"
+      :style="{
+        width: dropdownWidth
+      }"
       as="ul"
     >
       <template v-if="hasOptions">
@@ -44,7 +47,7 @@ const transitions = computed(() => ({
         </MenuItem>
       </template>
       <template v-else>
-        <MenuItem>
+        <MenuItem as="div" @click.prevent>
           <slot name="content" />
         </MenuItem>
       </template>
