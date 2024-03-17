@@ -6,6 +6,7 @@ import { DROPDOWN_ALIGN_CLASS, DROPDOWN_TRANSITION_CLASS } from './constants'
 
 const props = defineProps<DropdownOptionsProps>()
 
+const alignClass = computed(() => DROPDOWN_ALIGN_CLASS[props.align!])
 const transitionClass = computed(() => DROPDOWN_TRANSITION_CLASS[props.align!])
 const hasOptions = computed(() => !!props.options?.length)
 
@@ -22,7 +23,8 @@ const transitions = computed(() => ({
 <template>
   <Transition v-bind="transitions">
     <MenuItems
-      class="absolute menu z-[1] p-2 shadow bg-base-100 dark:bg-base-200 rounded-box"
+      :class="alignClass"
+      class="dropdown-content menu absolute z-[1] p-2 shadow bg-base-100 dark:bg-base-200 rounded-box"
       :style="{
         width: dropdownWidth
       }"
