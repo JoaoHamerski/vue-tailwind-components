@@ -20,6 +20,6 @@ module.exports = {
     'no-duplicate-imports': ['warn'],
     'vue/padding-line-between-blocks': ['error'],
     'vue/html-self-closing': ['error', { html: { component: 'always', void: 'always' } }],
-    'vue/require-default-prop': ['never']
+    'vue/require-default-prop': ['off']
   }
 }
