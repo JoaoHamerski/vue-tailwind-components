@@ -1,3 +1,6 @@
+import type { InjectionKey } from 'vue'
+import type { onOptionClickFn } from '@/types/components'
+
 type DropdownAlignmentTypes = 'tr' | 'tl' | 'br' | 'bl' | 'l' | 'r'
 type DropdownAlignmentClass = Record<DropdownAlignmentTypes, any>
 type DropdownAlignmentTransition = Record<DropdownAlignmentTypes, { to: any; from: any }>
@@ -19,3 +22,5 @@ export const DROPDOWN_TRANSITION_CLASS: DropdownAlignmentTransition = {
   l: { from: '-translate-x-2', to: 'translate-x-0' },
   r: { from: 'translate-x-2', to: 'translate-x-0' }
 }
+
+export const onOptionClickKey = Symbol() as InjectionKey<onOptionClickFn>
