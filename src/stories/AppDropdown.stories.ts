@@ -70,7 +70,7 @@ export const CustomTrigger: Story = {
                 <div class="flex gap-4 items-center">
                     <AppDropdown v-bind="args">
                         <template #trigger>
-                            <b :style="{color: 'red'}">Custom trigger</b>
+                            <b class="text-red-500 text-bold">Custom trigger</b>
                         </template>
                     </AppDropdown>
                 </div>
@@ -89,7 +89,7 @@ export const TrackStateOnCustomTrigger: Story = {
             <SBCentralizedComponent>
                 <AppDropdown v-bind="args">
                     <template #trigger="{ open }">
-                        <button class="btn">Custom Trigger - dropdown open state is : {{ open }}</button>
+                        <b class="text-red-500 text-bold">Custom Trigger - open state is : {{ open }}</b>
                     </template>
                 </AppDropdown>
             </SBCentralizedComponent>
