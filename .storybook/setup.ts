@@ -4,7 +4,6 @@ import '@/assets/main.css'
 import '@/libs/fontawesome'
 import type { App } from 'vue'
 import SBCentralizedComponent from './helpers/SBCentralizedComponent.vue'
-import SBThemeProvider from './helpers/SBThemeProvider.vue'
 
 setup((app) => {
   const bootstrap = new Bootstrap(app)
@@ -13,11 +12,10 @@ setup((app) => {
 
   // prettier-ignore
   bootstrap
-  .globalComponents()
-  .fontAwesome()
+    .globalComponents()
+    .fontAwesome()
 })
 
 const registerGlobalHelpers = (app: App) => {
   app.component('SBCentralizedComponent', SBCentralizedComponent)
-  app.component('SBThemeProvider', SBThemeProvider)
 }
