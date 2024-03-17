@@ -9,10 +9,14 @@ export interface AppDropdownProps {
   align?: DropdownAlignOption
   options?: DropdownOption[]
   optionsAs?: Component | string
+  dropdownWidth?: string
 }
 
 export type DropdownTriggerProps = Pick<AppDropdownProps, 'label' | 'labelClass'>
-export type DropdownOptionsProps = Pick<AppDropdownProps, 'options' | 'optionsAs' | 'align'>
+export type DropdownOptionsProps = Pick<
+  AppDropdownProps,
+  'options' | 'optionsAs' | 'align' | 'dropdownWidth'
+>
 
 export type DropdownOption = {
   id?: string | number

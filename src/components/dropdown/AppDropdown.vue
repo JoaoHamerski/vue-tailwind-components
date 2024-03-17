@@ -11,7 +11,8 @@ import { Component } from 'react'
 const props = withDefaults(defineProps<AppDropdownProps>(), {
   align: 'br',
   labelClass: 'btn',
-  optionsAs: 'a'
+  optionsAs: 'a',
+  dropdownWidth: '225px'
 })
 
 const dropdownClass = computed(() => DROPDOWN_ALIGN_CLASS[props.align])
@@ -25,7 +26,7 @@ const dropdownClass = computed(() => DROPDOWN_ALIGN_CLASS[props.align])
       </template>
     </DropdownTrigger>
 
-    <DropdownOptions v-bind="{ options, optionsAs, align }">
+    <DropdownOptions v-bind="{ options, optionsAs, align, dropdownWidth }">
       <template v-if="$slots['content']" #content="scope">
         <slot name="content" v-bind="scope" />
       </template>
