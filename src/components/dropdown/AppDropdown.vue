@@ -1,35 +1,47 @@
 <script setup lang="ts">
-import type { AppDropdownProps } from '@/types/components'
+import type { AppDropdownProps, DropdownOption } from '@/types/components'
 import { Menu } from '@headlessui/vue'
-import { computed } from 'vue'
-import { DROPDOWN_ALIGN_CLASS } from './constants'
+import { computed, provide } from 'vue'
+import { DROPDOWN_ALIGN_CLASS, onOptionClickKey } from './constants'
 
 import DropdownTrigger from './DropdownTrigger.vue'
-import DropdownOptions from './DropdownOptions.vue'
-import { Component } from 'react'
+import DropdownContent from './DropdownContent.vue'
+
+type AppDropdownEmits = {
+  (event: 'optionClick', param1: DropdownOption): void
+}
+
+const emit = defineEmits<AppDropdownEmits>()
 
 const props = withDefaults(defineProps<AppDropdownProps>(), {
   align: 'br',
   labelClass: 'btn',
   optionsAs: 'a',
-  dropdownWidth: '225px'
+  dropdownWidth: '225px',
+  chevron: true
 })
 
 const dropdownClass = computed(() => DROPDOWN_ALIGN_CLASS[props.align])
+
+const onOptionClick = (option: DropdownOption) => {
+  emit('optionClick', option)
+}
+
+provide(onOptionClickKey, onOptionClick)
 </script>
 
 <template>
   <Menu as="div" class="relative inline-block" :class="dropdownClass">
-    <DropdownTrigger v-bind="{ label, labelClass }">
-      <template v-if="$slots['trigger']" #trigger="scope">
-        <slot name="trigger" v-bind="scope" />
+    <DropdownTrigger v-bind="{ label, labelClass, chevron }">
+      <template v-for="(_, slot) of $slots" #[slot]="scope">
+        <slot :name="slot" v-bind="scope" />
       </template>
     </DropdownTrigger>
 
-    <DropdownOptions v-bind="{ options, optionsAs, align, dropdownWidth }">
-      <template v-if="$slots['content']" #content="scope">
-        <slot name="content" v-bind="scope" />
+    <DropdownContent v-bind="{ options, optionsAs, align, dropdownWidth }">
+      <template v-for="(_, slot) of $slots" #[slot]="scope">
+        <slot :name="slot" v-bind="scope" />
       </template>
-    </DropdownOptions>
+    </DropdownContent>
   </Menu>
 </template>
