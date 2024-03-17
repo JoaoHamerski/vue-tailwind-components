@@ -1,20 +1,14 @@
 <script setup lang="ts">
 import { MenuButton } from '@headlessui/vue'
 import type { DropdownTriggerProps } from '@/types/components'
-
+import DropdownChevron from './DropdownChevron.vue'
 defineProps<DropdownTriggerProps>()
 </script>
 
 <template>
-  <MenuButton v-if="label" :class="labelClass" v-slot="{ open }">
+  <MenuButton v-if="label" v-slot="{ open }" :class="labelClass">
     <span>{{ label }}</span>
-    <FWIcon
-      :icon="['fas', 'fa-chevron-down']"
-      class="transition-transform"
-      :class="{
-        'rotate-180': open
-      }"
-    ></FWIcon>
+    <DropdownChevron v-if="chevron" :open="open" />
   </MenuButton>
 
   <template v-else>
