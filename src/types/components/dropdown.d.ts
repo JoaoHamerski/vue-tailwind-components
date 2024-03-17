@@ -10,17 +10,26 @@ export interface AppDropdownProps {
   options?: DropdownOption[]
   optionsAs?: Component | string
   dropdownWidth?: string
+  chevron?: boolean
 }
 
-export type DropdownTriggerProps = Pick<AppDropdownProps, 'label' | 'labelClass'>
-export type DropdownOptionsProps = Pick<
+export type DropdownTriggerProps = Pick<AppDropdownProps, 'label' | 'labelClass' | 'chevron'>
+export type DropdownContentProps = Pick<
   AppDropdownProps,
   'options' | 'optionsAs' | 'align' | 'dropdownWidth'
 >
+export type DropdownOptionProps = Pick<DropdownContentProps, 'options' | 'optionsAs'>
+
+export interface DropdownChevronProps {
+  open: boolean
+}
 
 export type DropdownOption = {
   id?: string | number
   label: string
   icon?: string
   separator?: boolean
+  href?: string
 }
+
+export type onOptionClickFn = (option: DropdownOption) => void
