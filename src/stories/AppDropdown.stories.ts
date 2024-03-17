@@ -18,10 +18,14 @@ const meta: Meta<typeof AppDropdown> = {
     },
     options: {
       control: 'object'
+    },
+    dropdownWidth: {
+      control: 'text'
     }
   },
   args: {
-    align: 'br'
+    align: 'br',
+    dropdownWidth: '225px'
   },
   render: (args) => ({
     setup() {
@@ -30,7 +34,6 @@ const meta: Meta<typeof AppDropdown> = {
     template: `
         <SBCentralizedComponent>
             <AppDropdown v-bind="args" />
-
         </SBCentralizedComponent>
     `
   })
@@ -80,13 +83,34 @@ export const TriggerOpenSlotProp: Story = {
     },
     template: `
             <SBCentralizedComponent>
-                <div class="flex gap-4 items-center">
-                    <AppDropdown v-bind="args">
-                        <template #trigger="{ open }">
-                            <b>Custom Trigger - dropdown is open: {{ open }}</b>
-                        </template>
-                    </AppDropdown>
-                </div>
+                <AppDropdown v-bind="args">
+                    <template #trigger="{ open }">
+                        <b>Custom Trigger - dropdown is open: {{ open }}</b>
+                    </template>
+                </AppDropdown>
+            </SBCentralizedComponent>
+        `
+  })
+}
+
+export const CustomContent: Story = {
+  args: {
+    label: 'Custom Content'
+  },
+  render: (args) => ({
+    setup() {
+      return { args }
+    },
+    template: `
+            <SBCentralizedComponent>
+                <AppDropdown v-bind="args">
+                    <template #content>
+                        <div class="p-4">
+                            <div class="text-xl font-bold">Custom content</div>
+                            <div>Hello World!</div>
+                        </div>
+                    </template>
+                </AppDropdown>
             </SBCentralizedComponent>
         `
   })
