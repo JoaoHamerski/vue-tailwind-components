@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { MenuItem, MenuItems } from '@headlessui/vue'
-import type { DropdownOptionsProps } from '@/types/components'
+import type { DropdownContentProps } from '@/types/components'
 import { computed } from 'vue'
 import { DROPDOWN_ALIGN_CLASS, DROPDOWN_TRANSITION_CLASS } from './constants'
+import DropdownOption from './DropdownOption.vue'
 
-const props = defineProps<DropdownOptionsProps>()
+const props = defineProps<DropdownContentProps>()
 
 const alignClass = computed(() => DROPDOWN_ALIGN_CLASS[props.align!])
 const transitionClass = computed(() => DROPDOWN_TRANSITION_CLASS[props.align!])
@@ -31,22 +32,11 @@ const transitions = computed(() => ({
       as="ul"
     >
       <template v-if="hasOptions">
-        <MenuItem
-          v-for="(option, index) in options"
-          v-slot="{ active, close }"
-          :key="option.id || index"
-          as="li"
-        >
-          <Component
-            :is="optionsAs"
-            :class="{
-              'bg-base-300': active
-            }"
-            @click.prevent="close"
-          >
-            {{ option.label }}
-          </Component>
-        </MenuItem>
+        <DropdownOption v-bind="{ options, optionsAs }">
+          <template v-for="(_, slot) of $slots" #[slot]="scope">
+            <slot :name="slot" v-bind="scope" />
+          </template>
+        </DropdownOption>
       </template>
       <template v-else>
         <MenuItem as="div" @click.prevent>
