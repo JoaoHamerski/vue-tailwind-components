@@ -16,7 +16,7 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const Basic: Story = {
+export const Default: Story = {
   args: {
     class: 'text-base-content',
     icon: ['fas', 'fa-user']
