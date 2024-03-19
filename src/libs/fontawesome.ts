@@ -1,9 +1,10 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faUser, faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faChevronDown, faTimes } from '@fortawesome/free-solid-svg-icons'
 
 export const ICONS = {
   faUser,
-  faChevronDown
+  faChevronDown,
+  faTimes
 }
 
 library.add(ICONS)
