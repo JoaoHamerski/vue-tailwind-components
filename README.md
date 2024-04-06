@@ -3,7 +3,7 @@
 ## 🚀 Motivation
 I created this project due to the lack of consistent, flexible, and harmonic Vue components. It uses [TailwindCSS](https://tailwindcss.com/), [DaisyUI](https://daisyui.com/) to reduce the boilerplate of writing classes and [HeadlessUI](https://headlessui.com/) to more complex interactive components. Additionaly, it also uses [Storybook](https://storybook.js.org/) to create visual use cases of the components.  
 
-This project doesn't aim on being a "awesome disruptive package", just an alternative for Vue components.
+This project doesn't aim on being a "awesome disruptive package", just an alternative for Vue components using TailwindCSS.
 
 ## 🎯 Objective 
 To create a flexibile set of functional pre-built components, independently of each other, where you can copy what you want and change what you wish.
