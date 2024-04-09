@@ -1,19 +1,22 @@
 # vue-tailwind-components
 
 ## 🚀 Motivation
-I created this project due to the lack of consistent, flexible, and harmonic Vue components. It uses [TailwindCSS](https://tailwindcss.com/), [DaisyUI](https://daisyui.com/) to reduce the boilerplate of writing classes and [HeadlessUI](https://headlessui.com/) to more complex interactive components. Additionaly, it also uses [Storybook](https://storybook.js.org/) to create visual use cases of the components.  
+I decided to group together a few common components to use on individual projects, aiming on make it light, consistent and harmonic. 
 
-This project doesn't aim on being a "awesome disruptive package", just an alternative for Vue components using TailwindCSS.
-
-## 🎯 Objective 
-To create a flexibile set of functional pre-built components, independently of each other, where you can copy what you want and change what you wish.
+## 🎯 Objectives
+- Create flexible components, independent of each other
+- Make it strongly typed using TypeScript
+- Build consistent interfaces for light and dark themes
+- Integrate with semantic color names to make it easy to be themed
 
 ## 📋 Basic usage
-- Ensure you've installed the dependencies: Vue 3, TailwindCSS and DaisyUI (optional in some components).
-- Just copy the component folder from `src/components/`, its type declaration from `src/types` and paste into your project.
-- You may need to update some imports if they don't follow the same project structure.
+- Requirements: [Vue 3](https://vuejs.org/), [TailwindCSS 3](https://tailwindcss.com/) [HeadlessUI](https://headlessui.com/) and [DaisyUI 4](https://daisyui.com/) (optional in some components)
+- Each component and its subcomponents are wrapped in a directory
+- Copy the component directory from `./src/components` 
+- Copy the type declaration file from `./src/types`
+- The main component starts with `App` prefix
 
 ## 🔍 Preview
-The Storybook page can be seen on:  
+Storybook page:  
 https://joaohamerski.github.io/vue-tailwind-components/
 
